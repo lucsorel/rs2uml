@@ -1,0 +1,12 @@
+moon = "latest"
+rust = "1.95.0"
+
+# pre-commit hooks
+python = "3.14"
+uv = "latest"
+
+[tools.python]
+backend = "uv"
+
+[settings]
+auto-install = true

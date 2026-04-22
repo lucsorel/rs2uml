@@ -1,0 +1,19 @@
+[project]
+name = "rs2uml"
+version = "0.1.0"
+description = "pre-commit hooks for rs2uml: generate PlantUML class diagrams to document your rust application."
+readme = "README.md"
+requires-python = ">=3.14.3"
+dependencies = []
+
+[dependency-groups]
+lint = [
+    "pre-commit>=4.5.1",
+]
+
+[tool.uv]
+# 3-day cooldown before updating a dependency version
+exclude-newer = "P3D"
+default-groups = ["lint"]
+# use the python binary provided by proto
+python-preference = "only-system"
