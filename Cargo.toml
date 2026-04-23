@@ -1,8 +1,14 @@
 [package]
 name = "rs2uml"
 version = "0.1.0"
-edition = "2024"
 description = "Generate UML class diagrams to document your rust application"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/lucsorel/rs2uml.git"
+homepage = "https://github.com/lucsorel/rs2uml"
+keywords = ["uml", "diagram", "code-to-doc", "cli", "plantuml"]
+categories = ["command-line-utilities", "parser-implementations", "development-tools", "visualization", "data-structures"]
+edition = "2024"
 
 [dependencies]
 clap = { version = "4.6.1", features = ["derive"] }
