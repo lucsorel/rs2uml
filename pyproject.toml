@@ -1,7 +1,7 @@
 [project]
 name = "rs2uml"
 version = "0.1.0"
-description = "pre-commit hooks for rs2uml: generate PlantUML class diagrams to document your rust application."
+description = "pre-commit hooks for rs2uml: generate UML class diagrams to document your rust application."
 readme = "README.md"
 requires-python = ">=3.14.3"
 dependencies = []

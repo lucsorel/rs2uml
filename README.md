@@ -5,7 +5,7 @@ Generate UML class diagrams to document your rust application, export in various
 ## Use rs2uml
 
 ```sh
-cargo run --bin main
+cargo run --bin rs2uml -- --help
 ```
 
 Outputs
