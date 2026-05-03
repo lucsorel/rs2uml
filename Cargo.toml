@@ -11,5 +11,7 @@ categories = ["command-line-utilities", "parser-implementations", "development-t
 edition = "2024"
 
 [dependencies]
+anyhow = "1.0.102"
 clap = { version = "4.6.1", features = ["derive"] }
 ignore = "0.4.25"
+syn = { version = "2.0.117", features = ["visit", "full"] }

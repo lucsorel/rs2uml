@@ -1,3 +1,4 @@
+mod parser;
 mod walker;
 
 use clap::{Parser, ValueEnum};
@@ -23,7 +24,7 @@ fn assert_path_exists(pathname: &str) -> Result<PathBuf, String> {
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)] // Read from `Cargo.toml`
-struct Rs2umlCli {
+struct Rs2UmlCli {
     /// Path to the folder or file to inspect
     #[arg(long,value_parser = assert_path_exists)]
     pub path: PathBuf,
@@ -34,13 +35,14 @@ struct Rs2umlCli {
 }
 
 fn main() {
-    let rs2uml_cli = Rs2umlCli::parse();
+    let rs2uml_cli = Rs2UmlCli::parse();
     println!("{:?}", rs2uml_cli);
     let rust_files_result = find_rust_files(&rs2uml_cli.path);
     match rust_files_result {
         Ok(rust_files) => {
             for rust_file in rust_files {
-                println!("{:?}", rust_file)
+                println!("{:?}", rust_file);
+                let _ = parser::analyze_rust_ast(&rust_file);
             }
         }
         Err(error) => println!("{:?}", error),
