@@ -6,6 +6,8 @@ Generate UML class diagrams to document your rust application, export in various
 
 ```sh
 cargo run --bin rs2uml -- --help
+cargo run --bin rs2uml -- --path src/main.rs --format plantuml
+cargo run --bin rs2uml -- --path src --format plantuml
 ```
 
 Outputs

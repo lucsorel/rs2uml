@@ -1,5 +1,8 @@
+mod walker;
+
 use clap::{Parser, ValueEnum};
 use std::path::PathBuf;
+use walker::find_rust_files;
 
 #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, ValueEnum, Debug)]
 enum ExportFormat {
@@ -33,4 +36,13 @@ struct Rs2umlCli {
 fn main() {
     let rs2uml_cli = Rs2umlCli::parse();
     println!("{:?}", rs2uml_cli);
+    let rust_files_result = find_rust_files(&rs2uml_cli.path);
+    match rust_files_result {
+        Ok(rust_files) => {
+            for rust_file in rust_files {
+                println!("{:?}", rust_file)
+            }
+        }
+        Err(error) => println!("{:?}", error),
+    }
 }
